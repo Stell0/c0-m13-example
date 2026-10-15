@@ -60,7 +60,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "czero-core", git = "https://github.com/Stell0/ns8-czero.git?subdirectory=packages%2Fczero-core&tag=core-v0.24.1" }]
+requires-dist = [{ name = "czero-core", git = "https://github.com/Stell0/ns8-czero.git?subdirectory=packages%2Fczero-core&tag=core-v0.24.2" }]
 
 [[package]]
 name = "cffi"
@@ -188,8 +188,8 @@ wheels = [
 
 [[package]]
 name = "czero-core"
-version = "0.24.1"
-source = { git = "https://github.com/Stell0/ns8-czero.git?subdirectory=packages%2Fczero-core&tag=core-v0.24.1#ec940a931bbdd43bf2defe655934a3a3702edb3f" }
+version = "0.24.2"
+source = { git = "https://github.com/Stell0/ns8-czero.git?subdirectory=packages%2Fczero-core&tag=core-v0.24.2#d7de945dff9a28e70f8a3fb8f4fc437db7ed6c47" }
 dependencies = [
     { name = "alembic" },
     { name = "authlib" },
