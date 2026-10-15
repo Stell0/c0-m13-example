@@ -1,17 +1,17 @@
 {
   "format": 1,
   "upstream": "https://github.com/Stell0/ns8-czero.git",
-  "revision": "130b3eb285c99216b20ab144515e12500fcce94e",
+  "revision": "849736ab70f441ec05f5124b747fb6f6ef27991e",
   "files": [
     {
       "path": "build-images.sh",
       "mode": "100644",
-      "sha256": "613e0bedb6a5bc991bf5a00574195d03afc8f6d27e722be4e77617537661b15f"
+      "sha256": "024406b6f136182f5279fc472d38a6f05829d70de2aa346f6a62252e93d36e19"
     },
     {
       "path": "containers/czero-app/Containerfile",
       "mode": "100644",
-      "sha256": "2b23ce065a395661bb7f75fb48c0f0b6ba2bd8dbac66db498a8643fd7166b64c"
+      "sha256": "f36c062edba6c660c6016c81d2f8dc43cb02faa034cc27a92b22c93402a0508c"
     },
     {
       "path": "containers/czero-postgres/Containerfile",
@@ -21,7 +21,7 @@
     {
       "path": "scripts/sync-upstream.py",
       "mode": "100755",
-      "sha256": "337accf00849fe320a6e53acd9f00b44958f726e1ca0a0ad21ee1b06bf85090a"
+      "sha256": "f8070925a785105d1289cb003aded9cb33557e3301f44a4bcdcf2594edab65fa"
     },
     {
       "path": "scripts/check-core-release.py",
@@ -31,17 +31,23 @@
     {
       "path": ".github/workflows/sync-upstream.yml",
       "mode": "100644",
-      "sha256": "8b854f0b111f94ebb8f5eea43f0fcabbe7199bcbbb5d5d500a172283793cebee"
+      "sha256": "d374be7f7dd7f4f173b2db544aa53c653cb3326ab5d4aaa4c52052aed0b8e58c"
     },
     {
       "path": ".github/workflows/test-local.yml",
       "mode": "100644",
-      "sha256": "b983f95ff5f692f4e3fedcf2042943e39c827a115d09a4e55fbccb145c060969"
+      "sha256": "5e5a0d7ee860da18d37cfe6a7daa3ef6d759f4076071f48b197fa713531c60aa",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/publish-images.yml",
       "mode": "100644",
-      "sha256": "c93a683a198b4fa9aa046d07f79821ac2831617aae12a518ed594e9e393d41cf"
+      "sha256": "4bc13444acd96101e9b0da90c9a742aa8f0c521160fbb6bc9f24edbae275faec",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/test-module.yml",
@@ -51,12 +57,15 @@
     {
       "path": ".github/workflows/publish-core.yml",
       "mode": "100644",
-      "sha256": "189877ee43df9e3e40ccd36be78ca22409c9605680da804c159f1395bf0b57ed"
+      "sha256": "b14184cfd76736e99dd1a5b4efae44fd55d869d013c5f5856fb1a6b4967ab7e6",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".agents/skills/c0-contribute-upstream/SKILL.md",
       "mode": "100644",
-      "sha256": "3e9647659f6b0d75c111d1d1922ce169d2648ee8c186d67b5064be6df514a24f"
+      "sha256": "1a117efc8c306afd926f9fa269dd47da383da543ebcfd91f07ff2105307d5809"
     },
     {
       "path": ".agents/skills/c0-create-feature/SKILL.md",
@@ -71,7 +80,7 @@
     {
       "path": ".agents/skills/c0-upgrade-from-upstream/SKILL.md",
       "mode": "100644",
-      "sha256": "bfa60f62fa54efcc5a2cdeb009f7668575691db39fe160b412a91f0e205ed713"
+      "sha256": "904da8175eba1b198fb06ec7fa7407798935117e0077a1fa4cbeb8d7f8765a7e"
     },
     {
       "path": "imageroot/actions/configure-module/10validate",
@@ -350,33 +359,39 @@
     },
     {
       "path": "scripts/normalize-core-sdist.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "d369174697e540cc769bab64e1928b58433ecb758be28c597e353b47c6f406d1"
     },
     {
       "path": "scripts/select-core-source.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "92fd53a018ba131829c9c99fde6e1a4c271347685f9f29bebbf240fc8e596fe0"
     },
     {
       "path": ".github/workflows/test-core-renovate.yml",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "af94682cf4316c9e145d45ef222ddaa207abfd23dbc9c0dea7d3709ac785cb49",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": "tests/development/core-renovate.mjs",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "4ba9b29e6aca64a05bd15dfe58b6759718f0780c0f2fc64e108d0d9403358380"
     },
     {
       "path": ".github/workflows/test-core-consumer.yml",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "6f1e2b103d1289b5cae9ee0017cda52034cc448981293d8deaaa5daac0e902d2",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": "tests/core_consumer_runtime_probe.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "7d9f12aa4a99f762719c2602834d09a050bc95f7fb2775236eb4b3420d50d839"
     },
     {
       "path": "LICENSE",
