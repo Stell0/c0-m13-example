@@ -59,7 +59,7 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ github.token }}
-          branch: c0/upstream-update
+          branch: c0/upstream-untouched
           title: 'chore(upstream): review managed updates'
           commit-message: |
             chore(upstream): propose managed updates
