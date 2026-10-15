@@ -1,7 +1,7 @@
 {
   "format": 1,
   "upstream": "https://github.com/Stell0/ns8-czero.git",
-  "revision": "130b3eb285c99216b20ab144515e12500fcce94e",
+  "revision": "ec940a931bbdd43bf2defe655934a3a3702edb3f",
   "files": [
     {
       "path": "build-images.sh",
@@ -21,7 +21,10 @@
     {
       "path": "scripts/sync-upstream.py",
       "mode": "100755",
-      "sha256": "337accf00849fe320a6e53acd9f00b44958f726e1ca0a0ad21ee1b06bf85090a"
+      "sha256": "c4ff3ba03ee450057b1f26c37abe03ebdddf861a924ec214ff18c3ebdda5c8e3",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "customized"
     },
     {
       "path": "scripts/check-core-release.py",
@@ -31,12 +34,18 @@
     {
       "path": ".github/workflows/sync-upstream.yml",
       "mode": "100644",
-      "sha256": "8b854f0b111f94ebb8f5eea43f0fcabbe7199bcbbb5d5d500a172283793cebee"
+      "sha256": "95d949454aa4fcba00747b9d57563ffc12a8df753b47034c269551ccf19c84fb",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/test-local.yml",
       "mode": "100644",
-      "sha256": "b983f95ff5f692f4e3fedcf2042943e39c827a115d09a4e55fbccb145c060969"
+      "sha256": "5e5a0d7ee860da18d37cfe6a7daa3ef6d759f4076071f48b197fa713531c60aa",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/publish-images.yml",
@@ -51,7 +60,10 @@
     {
       "path": ".github/workflows/publish-core.yml",
       "mode": "100644",
-      "sha256": "189877ee43df9e3e40ccd36be78ca22409c9605680da804c159f1395bf0b57ed"
+      "sha256": "6d8b91488bb696b83474de85176cbe39d35ffd215bce1db2e6c2b078a39e6fba",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".agents/skills/c0-contribute-upstream/SKILL.md",
@@ -71,7 +83,7 @@
     {
       "path": ".agents/skills/c0-upgrade-from-upstream/SKILL.md",
       "mode": "100644",
-      "sha256": "bfa60f62fa54efcc5a2cdeb009f7668575691db39fe160b412a91f0e205ed713"
+      "sha256": "78e0731f7155576f752490974fc738ba87ba8a5e3364174f7154f0ef5aa55481"
     },
     {
       "path": "imageroot/actions/configure-module/10validate",
@@ -350,8 +362,8 @@
     },
     {
       "path": "scripts/normalize-core-sdist.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "d369174697e540cc769bab64e1928b58433ecb758be28c597e353b47c6f406d1"
     }
   ]
 }
