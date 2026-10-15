@@ -51,4 +51,11 @@ clean worktree based on upstream's current default branch. Keep application
 branding, custom schemas, deployment data and unfinished drafts in the fork.
 Use `c0-contribute-upstream` and the installed NethServer commit/PR skills.
 
-Acceptance staging: managed-file checks are enabled. Core consumer CI awaits the verified public Core tag and committed uv.lock; no Core installation success is claimed for this checkout yet.
+Native Actions tokens cannot push workflow-file changes. Those files are
+preserved with `review_reason=workflow-permission` and exact migration ranges.
+A maintainer with an appropriate publishing credential may explicitly use
+`--allow-workflow-updates`; review customizations before enabling that option.
+Resolve all three review markers only after testing the manual migration.
+
+Acceptance staging: independent managed checks are enabled. Core consumer CI
+awaits the verified public Core tag and uv.lock; no Core success is claimed yet.
