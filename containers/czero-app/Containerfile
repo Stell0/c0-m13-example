@@ -1,0 +1,45 @@
+# Copyright (C) 2026 C0 contributors
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+FROM docker.io/library/python:3.13.16-slim-trixie AS builder
+
+ENV UV_LINK_MODE=copy \
+    UV_PROJECT_ENVIRONMENT=/opt/czero/.venv \
+    UV_CACHE_DIR=/tmp/uv-cache
+
+WORKDIR /build
+RUN pip install --no-cache-dir uv==0.12.20
+
+# Copy only the package manifests and runtime sources needed to build wheels.
+COPY app/pyproject.toml app/uv.lock /build/app/
+COPY app/src /build/app/src
+COPY packages/czero-core/pyproject.toml packages/czero-core/README.md packages/czero-core/LICENSE /build/packages/czero-core/
+COPY packages/czero-core/src /build/packages/czero-core/src
+WORKDIR /build/app
+# Dependency wheels can bundle authoring skills and extension build sources.
+RUN uv sync --frozen --no-dev --no-editable \
+    && find /opt/czero/.venv -type d \( -name .agents -o -name testing -o -name tests \) -prune -exec rm -rf {} + \
+    && find /opt/czero/.venv -type f \( -name '*.h' -o -name '*.pxd' -o -name '*.pxi' -o -name '*.pyx' \) -delete \
+    && rm -rf /opt/czero/.venv/lib/python*/site-packages/alembic/templates \
+    && rm -f /opt/czero/.venv/bin/alembic \
+    && rm -rf /tmp/uv-cache
+
+FROM docker.io/library/python:3.13.16-slim-trixie AS runtime
+
+ENV PATH="/opt/czero/.venv/bin:${PATH}" \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    CZERO_STATIC_DIR=/opt/czero/static
+
+# Dependencies are already installed by the builder; keep package installers
+# and build tooling out of the runtime filesystem.
+RUN python -m pip uninstall --yes pip setuptools \
+    && useradd --system --uid 10001 --create-home czero \
+    && install -d -o 10001 -g 10001 /var/lib/czero/sources
+WORKDIR /opt/czero
+COPY --from=builder --chown=10001:10001 /opt/czero/.venv /opt/czero/.venv
+COPY --chown=10001:10001 app/static /opt/czero/static
+
+USER 10001:10001
+EXPOSE 8080
+CMD ["uvicorn", "czero_app.main:app", "--host", "0.0.0.0", "--port", "8080", "--access-log"]

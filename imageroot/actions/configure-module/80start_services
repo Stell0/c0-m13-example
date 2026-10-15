@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Copyright (C) 2023 Nethesis S.r.l.
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+
+# If the control reaches this step, the service can be enabled and started
+
+set -e
+exec 1>&2
+
+systemctl --user enable czero.service
+# Apply private-pod routing and replace every child in native dependency order.
+systemctl --user restart czero-pod.service czero-postgres.service czero.service
