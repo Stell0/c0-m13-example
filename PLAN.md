@@ -18,3 +18,5 @@ Acceptance sequence:
 
 The copied NS8 files are review fixtures. They are not an installed module and
 these consumer checks do not replace native update/restore acceptance.
+
+Core consumer: published core-v0.24.1 at ec940a931bbdd43bf2defe655934a3a3702edb3f, generated actual uv.lock and enabled frozen external installation CI. Remote consumer results remain pending.

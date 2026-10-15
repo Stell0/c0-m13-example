@@ -2,8 +2,9 @@
 
 This example is repository development material, never runtime image content.
 It demonstrates a standalone Core consumer plus explicit managed-file updates.
-Core 0.24.1 publication is under M13 verification; do not treat this example as
-released until PLAN.md records the actual public artifacts and consumer tests.
+Core 0.24.1 is published at https://github.com/Stell0/ns8-czero/releases/tag/core-v0.24.1.
+The Git tag and uv.lock pin source ec940a931bbdd43bf2defe655934a3a3702edb3f.
+Managed-update proposals and their exact-head checks pass; consumer CI follows.
 
 Create an isolated example checkout with:
 
@@ -41,9 +42,9 @@ do not publish the template's `czero:main` tag from a second repository.
 For the full NS8 application template, fork the repository itself, retain its
 native tests, and use the installed NethServer skills plus the four C0 skills.
 
-GitHub prevents GITHUB_TOKEN-generated PRs from recursively triggering CI.
-Dispatch Local checks and Publish images explicitly on a real module's proposal
-branch (publication triggers QEMU), or use an approved GitHub App. The minimal
+Native-token pushes do not trigger push builds. Token-created PR checks need
+workflow approval or explicit dispatch. Dispatch Publish images on a real
+module proposal branch for QEMU, or use an approved GitHub App. The minimal
 standalone consumer has its own focused checks. A started workflow is not a pass.
 
 For reusable contributions, isolate only Core/infrastructure improvements in a
@@ -57,5 +58,8 @@ A maintainer with an appropriate publishing credential may explicitly use
 `--allow-workflow-updates`; review customizations before enabling that option.
 Resolve all three review markers only after testing the manual migration.
 
-Acceptance staging: independent managed checks are enabled. Core consumer CI
-awaits the verified public Core tag and uv.lock; no Core success is claimed yet.
+Repository setup must allow Actions-created PRs (Settings → Actions → General).
+GitHub combines PR creation and approval in that setting; this updater only
+creates proposals and never approves or merges them. Keep default token
+permissions read. Bot-created PR checks require workflow approval or manual
+dispatch, as documented in GitHub's June 2026 Actions behavior.
