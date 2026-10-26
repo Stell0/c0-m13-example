@@ -150,6 +150,36 @@
                 "scorer",
                 "limits"
             ]
+        },
+        "session_policy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "absolute_seconds": {
+                    "type": "integer",
+                    "minimum": 60,
+                    "maximum": 86400
+                },
+                "idle_seconds": {
+                    "type": "integer",
+                    "minimum": 60,
+                    "maximum": 86400
+                }
+            },
+            "required": [
+                "absolute_seconds",
+                "idle_seconds"
+            ]
+        },
+        "cimd_enabled": {
+            "type": "boolean",
+            "description": "Allow administrator-approved public OAuth client metadata URLs; disabled by default"
+        },
+        "connection_idle_seconds": {
+            "type": "integer",
+            "minimum": 86400,
+            "maximum": 31536000,
+            "multipleOf": 86400
         }
     },
     "additionalProperties": false,
@@ -160,6 +190,9 @@
         "idp",
         "owner",
         "owner_ldap_uuid",
-        "retrieval"
+        "retrieval",
+        "session_policy",
+        "cimd_enabled",
+        "connection_idle_seconds"
     ]
 }
