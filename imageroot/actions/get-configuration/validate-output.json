@@ -58,6 +58,14 @@
                         },
                         "api_key_configured": {
                             "type": "boolean"
+                        },
+                        "input_format": {
+                            "type": "string",
+                            "enum": [
+                                "legacy",
+                                "context-v1"
+                            ],
+                            "description": "Embedding input format; context-v1 requires building a separate complete index."
                         }
                     },
                     "required": [
@@ -150,6 +158,84 @@
                 "scorer",
                 "limits"
             ]
+        },
+        "session_policy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "absolute_seconds": {
+                    "type": "integer",
+                    "minimum": 60,
+                    "maximum": 86400
+                },
+                "idle_seconds": {
+                    "type": "integer",
+                    "minimum": 60,
+                    "maximum": 86400
+                }
+            },
+            "required": [
+                "absolute_seconds",
+                "idle_seconds"
+            ]
+        },
+        "cimd_enabled": {
+            "type": "boolean",
+            "description": "Allow administrator-approved public OAuth client metadata URLs; disabled by default"
+        },
+        "connection_idle_seconds": {
+            "type": "integer",
+            "minimum": 86400,
+            "maximum": 31536000,
+            "multipleOf": 86400
+        },
+        "extraction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "workers": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4
+                },
+                "document_workers": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4
+                },
+                "space_workers": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4
+                },
+                "max_queued_units": {
+                    "type": "integer",
+                    "minimum": 200,
+                    "maximum": 4000
+                },
+                "max_staging_bytes": {
+                    "type": "integer",
+                    "minimum": 2097152,
+                    "maximum": 67108864
+                },
+                "ocr_enabled": {
+                    "type": "boolean"
+                },
+                "ocr_language": {
+                    "type": "string",
+                    "enum": [
+                        "eng",
+                        "ita",
+                        "eng+ita"
+                    ]
+                },
+                "cache_enabled": {
+                    "type": "boolean"
+                }
+            }
         }
     },
     "additionalProperties": false,
@@ -160,6 +246,9 @@
         "idp",
         "owner",
         "owner_ldap_uuid",
-        "retrieval"
+        "retrieval",
+        "session_policy",
+        "cimd_enabled",
+        "connection_idle_seconds"
     ]
 }
