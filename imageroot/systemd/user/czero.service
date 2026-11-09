@@ -22,9 +22,13 @@ Restart=always
 ExecStartPre=/bin/rm -f %t/czero.pid %t/czero.ctr-id
 # Migrations are application functionality, invoked through the Core CLI.
 ExecStartPre=/usr/bin/podman run --rm --pod-id-file=%t/czero.pod-id \
+    --memory=1g --memory-swap=2g --pids-limit=256 \
+    --cap-drop=ALL --security-opt=no-new-privileges \
     --env-file=./passwords.env --entrypoint=python ${CZERO_APP_IMAGE} -m czero_core.migrate
 ExecStart=/usr/bin/podman run \
     --detach \
+    --memory=1g --memory-swap=2g --pids-limit=256 \
+    --cap-drop=ALL --security-opt=no-new-privileges \
     --conmon-pidfile=%t/czero.pid \
     --cidfile=%t/czero.ctr-id \
     --cgroups=no-conmon \
@@ -35,7 +39,11 @@ ExecStart=/usr/bin/podman run \
     --env-file=./retrieval.env \
     --volume=czero-sources:/var/lib/czero/sources:z \
     --env=CZERO_MODULE_ID=${CZERO_MODULE_ID} \
+    --env=CZERO_CIMD_ENABLED=${CZERO_CIMD_ENABLED} \
     --env=CZERO_BASE_PATH=${CZERO_BASE_PATH} \
+    --env=CZERO_SESSION_ABSOLUTE_SECONDS=${CZERO_SESSION_ABSOLUTE_SECONDS} \
+    --env=CZERO_SESSION_IDLE_SECONDS=${CZERO_SESSION_IDLE_SECONDS} \
+    --env=CZERO_CONNECTION_IDLE_SECONDS=${CZERO_CONNECTION_IDLE_SECONDS} \
     ${CZERO_APP_IMAGE}
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/czero.ctr-id -t 10
 ExecStopPost=/usr/bin/podman rm --ignore -f --cidfile %t/czero.ctr-id
