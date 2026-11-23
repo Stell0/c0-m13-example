@@ -1,77 +1,92 @@
 {
   "format": 1,
   "upstream": "https://github.com/Stell0/ns8-czero.git",
-  "revision": "130b3eb285c99216b20ab144515e12500fcce94e",
+  "revision": "a5758ada5210ee25f83c6d4e122dd7c561c02978",
   "files": [
     {
       "path": "build-images.sh",
       "mode": "100644",
-      "sha256": "613e0bedb6a5bc991bf5a00574195d03afc8f6d27e722be4e77617537661b15f"
+      "sha256": "a811c74f28ab7185710a4b40ec45479de9c9f49b5df00f0d15c0fd1bd53f6f2c"
     },
     {
       "path": "containers/czero-app/Containerfile",
       "mode": "100644",
-      "sha256": "2b23ce065a395661bb7f75fb48c0f0b6ba2bd8dbac66db498a8643fd7166b64c"
+      "sha256": "cb71de6cf8349a83fc123c41312f43506a08ef9f92ed3ae83e95bca550bb45ef"
     },
     {
       "path": "containers/czero-postgres/Containerfile",
       "mode": "100644",
-      "sha256": "f2c05e583689b79df8fd6050bbbc23db9f2826e7b826279db38f0dfda26de578"
+      "sha256": "d13007cdd5546ca409fa4a78063ccbc18de4f7cc4107d6ade88060905aaaa485"
     },
     {
       "path": "scripts/sync-upstream.py",
       "mode": "100755",
-      "sha256": "337accf00849fe320a6e53acd9f00b44958f726e1ca0a0ad21ee1b06bf85090a"
+      "sha256": "f8070925a785105d1289cb003aded9cb33557e3301f44a4bcdcf2594edab65fa"
     },
     {
       "path": "scripts/check-core-release.py",
       "mode": "100755",
-      "sha256": "1590fc6397908970df398ced2b0a19a447332611e20977b4a768da3afbf2d99a"
+      "sha256": "9cb6c9b8d42bf5068243fd980dd66a408a17bda4eb1984db25c87d8c5e49ee36"
     },
     {
       "path": ".github/workflows/sync-upstream.yml",
       "mode": "100644",
-      "sha256": "8b854f0b111f94ebb8f5eea43f0fcabbe7199bcbbb5d5d500a172283793cebee"
+      "sha256": "b01f804d0bd7aedc06b3369a230b00874918398160625967043d455eae9edee3",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/test-local.yml",
       "mode": "100644",
-      "sha256": "b983f95ff5f692f4e3fedcf2042943e39c827a115d09a4e55fbccb145c060969"
+      "sha256": "016fea69387dec40de2e5644632d7f15064c2af776852f2d407884b0b84f67f9",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/publish-images.yml",
       "mode": "100644",
-      "sha256": "c93a683a198b4fa9aa046d07f79821ac2831617aae12a518ed594e9e393d41cf"
+      "sha256": "5f531040d1a8bf675b3dcaac2363f603c00fe834c911619f24de7531995f85e0",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/test-module.yml",
       "mode": "100644",
-      "sha256": "e4e004ea5bdf6f35c87d346443aa6fdc137def74c2556eeb0a2acb6c0c856b1b"
+      "sha256": "93d99a03f95bd6d817a5d940cbdfeb54b0d8d9dc3eae970ea4c62c14191dddb8",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".github/workflows/publish-core.yml",
       "mode": "100644",
-      "sha256": "189877ee43df9e3e40ccd36be78ca22409c9605680da804c159f1395bf0b57ed"
+      "sha256": "023060cd26a38fb1eb96592522ab3bcde2c1c5011b8e7e419ae97632fc64e1fe",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": ".agents/skills/c0-contribute-upstream/SKILL.md",
       "mode": "100644",
-      "sha256": "3e9647659f6b0d75c111d1d1922ce169d2648ee8c186d67b5064be6df514a24f"
+      "sha256": "b56cd49059c403c4657f8efd163d7e11ca74c8fdd62b10371b02d0003ee45583"
     },
     {
       "path": ".agents/skills/c0-create-feature/SKILL.md",
       "mode": "100644",
-      "sha256": "623e1e8d6109419438f29739da2b9c0d75de43ae349b81564f9d9e11288877d5"
+      "sha256": "94d1b524ca674b8348ccd0b9a64f0a2cae26c2fc32f891bfed446d1bb9e35950"
     },
     {
       "path": ".agents/skills/c0-develop-core/SKILL.md",
       "mode": "100644",
-      "sha256": "ea937baf7d46b041fdc7d56b3f677bd06dce8b3e139f7829f506dd7c10c3e879"
+      "sha256": "53a5ac25e29613c313d637a0384d83d64713a56623fffca708bfdb10a771cc4c"
     },
     {
       "path": ".agents/skills/c0-upgrade-from-upstream/SKILL.md",
       "mode": "100644",
-      "sha256": "bfa60f62fa54efcc5a2cdeb009f7668575691db39fe160b412a91f0e205ed713"
+      "sha256": "bfb45f95dc3e5d7277d8d7181213674cfdb2bdf0ea1724d755af7175b65c8562"
     },
     {
       "path": "imageroot/actions/configure-module/10validate",
@@ -126,7 +141,7 @@
     {
       "path": "imageroot/actions/configure-module/validate-input.json",
       "mode": "100644",
-      "sha256": "5d1650b646a74d2fd44c512e3e2578495b9bddaf9730a634038efa857224f7e0"
+      "sha256": "3a6da8f00212c673913e9df11b74975a3a161d8e7dc6cc28141a12a3f6ebd1b1"
     },
     {
       "path": "imageroot/actions/create-module/20database-secrets",
@@ -146,7 +161,7 @@
     {
       "path": "imageroot/actions/create-module/40scheduler",
       "mode": "100755",
-      "sha256": "1f98d933a2ae0b8b7c37af51f6fafb074d148bdde1379e77ffcada33ae2018d8"
+      "sha256": "3bf53c08ff70c44d51d4f263a2ce933be2174450b637b4bea373bcdbe526938e"
     },
     {
       "path": "imageroot/actions/get-auth-options/20read",
@@ -176,12 +191,12 @@
     {
       "path": "imageroot/actions/get-configuration/20read",
       "mode": "100755",
-      "sha256": "5a6ef0270ca48a70186b97fdf6858203e06af01d40436ab26d0a09f71f413da3"
+      "sha256": "8aced017622f2d7c281d01dd3f7fcc931c2a13c8e55963fc95a3c611aa8a7e1a"
     },
     {
       "path": "imageroot/actions/get-configuration/validate-output.json",
       "mode": "100644",
-      "sha256": "91dfc956b4817077b830fca786004b382bdcbaadbcb0d5d0c9b1aaa4697a3b12"
+      "sha256": "1987a02e651591bf81536a882e3aef962adff8e780aab93136db6b227f824896"
     },
     {
       "path": "imageroot/actions/get-runtime-status/20check",
@@ -216,12 +231,12 @@
     {
       "path": "imageroot/actions/restore-module/20persist-settings",
       "mode": "100755",
-      "sha256": "0a022f5d660c3a2def1451ecf3459f81fe4cba0367bf78b65f43578acda6b75c"
+      "sha256": "2dd07f67957ec00afbac15b37ef9374a9c1bef7e009c64c018d7fdb7f2f78fe2"
     },
     {
       "path": "imageroot/actions/restore-module/30validate-backup",
       "mode": "100755",
-      "sha256": "fe29fefaa0e91fd4311fc8939a9e7d743e1d40dcc755c34e019e656ccd56256c"
+      "sha256": "ab12f837bc145ace47c9efd925e7ba7ff8a046b9f5743ecbab007057a8247e13"
     },
     {
       "path": "imageroot/actions/restore-module/35retrieval-state",
@@ -246,7 +261,7 @@
     {
       "path": "imageroot/actions/restore-module/80start-services",
       "mode": "100755",
-      "sha256": "9cb765157a17485db220b97fcb4df220aa78a92c3556d1a2127ee1bcbe1d211c"
+      "sha256": "4f7fd475abd387d6acba8c9fb6019d9fde030ced5fc8d60257a0c29acc4f513d"
     },
     {
       "path": "imageroot/bin/czero-create-auth-state",
@@ -266,22 +281,22 @@
     {
       "path": "imageroot/bin/czero_retrieval_config.py",
       "mode": "100644",
-      "sha256": "c44a58a58a4c369b50a103603ed26ee0d42a3a6cbdc7921e87083cf0d22096d7"
+      "sha256": "d9cfb7d2f1f8f01e7c3d2ceaaa4b05c24fafaf033991a9a60d8c391fa8199392"
     },
     {
       "path": "imageroot/bin/module-cleanup-state",
       "mode": "100755",
-      "sha256": "4f92255bc0976a70ab921dfabc39d1b231734408e89606795872718d755e9dc7"
+      "sha256": "75da812347104395db17431c45dcf09b8a12d0691e45c3912ca8685f6c48ba47"
     },
     {
       "path": "imageroot/bin/module-dump-state",
       "mode": "100755",
-      "sha256": "a54bf3e4e915d21728673abc3bfdd4a28b5c65671ed59822344d287f5eb1ebad"
+      "sha256": "12f00faa4250cc8f1ff9cc87490167f3dca0067a9c0127f29e50d683b2f29923"
     },
     {
       "path": "imageroot/etc/state-include.conf",
       "mode": "100644",
-      "sha256": "cc0e23d73d1042b104141246d96c15970296b78822c5948bb8437f3db1f183a3"
+      "sha256": "83bbb29e6d9fb3cecb07a43f67ce52f80f3bdc2517593e8f9517616e9bdb7c0b"
     },
     {
       "path": "imageroot/events/service-oidc-changed/20reconcile",
@@ -301,12 +316,12 @@
     {
       "path": "imageroot/systemd/user/czero-postgres.service",
       "mode": "100644",
-      "sha256": "3b086e2131c0969eaabeb0be35a3841259f93422879e646eca65450f95b10647"
+      "sha256": "bda2ddd1dcefdd603bab72e8ae09b3220a7b299b21c6bf24eef3054b0f9248b9"
     },
     {
       "path": "imageroot/systemd/user/czero-worker.service",
       "mode": "100644",
-      "sha256": "0e7c1d899c31909ddcfd71e3d980e882310dc1eb521a34b0b42ab281b1510ae1"
+      "sha256": "5713ee779c65bdbaac79525db035cf72f72b82431817aa500aa5c935f2c93e34"
     },
     {
       "path": "imageroot/systemd/user/czero-worker.timer",
@@ -316,7 +331,7 @@
     {
       "path": "imageroot/systemd/user/czero.service",
       "mode": "100644",
-      "sha256": "dddc7f365a496bcb354df8c97f309b3add26538dc354e30f7a0f49e6cfc87ede"
+      "sha256": "7109c31606eae52c83e30ea5dcdf26fbd41a8c12ba6f3c1340783b8f410aaa9e"
     },
     {
       "path": "imageroot/update-module.d/20instance-id",
@@ -341,7 +356,7 @@
     {
       "path": "imageroot/update-module.d/60scheduler",
       "mode": "100755",
-      "sha256": "4adbc2e1077b9b55030e67f315a270a47bb918738f99c50550fbcdbfb2051a39"
+      "sha256": "290bd63213f69cc1b6853e69c76722588225950a55a843a1a2b780d072728f62"
     },
     {
       "path": "imageroot/update-module.d/80restart",
@@ -350,33 +365,39 @@
     },
     {
       "path": "scripts/normalize-core-sdist.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "d369174697e540cc769bab64e1928b58433ecb758be28c597e353b47c6f406d1"
     },
     {
       "path": "scripts/select-core-source.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "3c59281330aac6233d52ce6ff6f7911ad3ba2759bcd03ec331a87448ee94c441"
     },
     {
       "path": ".github/workflows/test-core-renovate.yml",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "569b4799b423eba76ef79c2d2c7bf58bf828474edea213db6717a8c6251d7f22",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": "tests/development/core-renovate.mjs",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "d830b8144be4a0ce27f1fc8238b3f6c2e8dc0266f628c2782a2710312738fd23"
     },
     {
       "path": ".github/workflows/test-core-consumer.yml",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "89bf3e5c025f7ccd877985fb0954c1b5ecea70f752ea87d4c7927fdfaf49a2b4",
+      "needs_review": true,
+      "review_from": "130b3eb285c99216b20ab144515e12500fcce94e",
+      "review_reason": "workflow-permission"
     },
     {
       "path": "tests/core_consumer_runtime_probe.py",
-      "mode": null,
-      "sha256": null
+      "mode": "100644",
+      "sha256": "f4204b4baaa38993c916778cd5279d158a431dd63796792d0d307e403519f6c0"
     },
     {
       "path": "LICENSE",
